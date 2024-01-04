@@ -1,0 +1,314 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    color: #222;
+}
+
+ul, li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #222;
+}
+
+img{
+    vertical-align: top;
+    border: 0;
+}
+/* ==================================================== */
+#container{
+    /* background-color: aliceblue; */
+    margin-top: 20px;
+}
+
+#container #noticeModBox{
+    /* background-color: antiquewhite; */
+    width: 1000px;
+    margin: 0 auto;
+    /* border: 1px solid #222; */
+    padding: 10px;
+}
+
+
+
+/* 수정사항 검색 */
+
+#noticeModBox .scBar{
+    /* background-color: aqua; */
+    margin-bottom: 10px;
+}
+
+.scBar ul{
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+}
+
+.scBar ul li{
+    /* background-color: beige; */
+}
+
+.scBar ul li span{
+    display: inline-block;
+    font-size: 15px;
+}
+
+.scBar ul .scList1{
+    background-color: #eee;
+    width: 100px;
+    height: 30px;
+    border: 1px solid #222;
+    margin-right: 20px;
+}
+
+.scBar ul .scList1 select{
+    text-align: center;
+    text-align-last: center;
+    width: 100px;
+    height: 30px;
+    background: url('https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png') calc(100% - 5px) center no-repeat;
+    background-size: 20px;
+    border: 1px solid #888;
+    outline: none;
+}
+
+.scBar ul .scList1 select:hover{
+    border: 1px solid #222;
+}
+
+.scBar ul .scList1 select:focus{
+    border-color: 222;
+    outline: 0;
+    border-width: 1px;
+  }
+  
+.scBar ul .scList1 select option{
+    background: #222;
+    color: #fff;
+    padding: 3px 0;
+}
+
+.scBar ul .scList2{
+    margin-right: 20px;
+}
+
+.scBar ul .scList2 .formControl{
+    padding: 0px 0px 0px 10px;
+    width: 280px;
+    height: 30px;
+    border: 1px solid #888;
+}
+
+.scBar ul .scList2 .formControl:hover{
+    border: 1px solid #222;
+}
+
+.scBar ul .scList2 .formControl:focus{
+    border-color: #222;
+    outline: 0;
+    border-width: 1px;
+}
+
+.scBar ul .scList3 .btnControl{
+    background-color: #474757;
+    border: none;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.scBar ul .scList3 .btnControl:hover{
+    background-color: #2d2d38;
+    cursor:pointer;
+}
+
+
+
+/* 공지상세보기 및 수정 */
+
+#noticeModBox .modTable{
+    /* background-color: rgb(211, 177, 245); */
+    width: 980px; 
+    height: 445px; 
+    padding: 10px 10px 10px 10px;
+    border : 2px solid #222;
+    margin-bottom: 10px;
+}
+
+.modTable table{
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border : 2px solid #222;
+    border-collapse : collapse;
+    /* table-layout: fixed; */
+}
+
+.modTable tr,th,td{
+    border : 2px solid #222;
+}
+
+.modTable th{
+    background-color: #eee;
+    width: 100px;
+    padding: 5px;
+}
+
+.modTable td{
+    background-color: #fff;
+    padding-left: 5px;
+    white-space:nowrap;
+    text-overflow:ellipsis; 
+    overflow:hidden;
+}
+
+.modTable table .formControl0{
+    padding: 0px 0px 0px 10px;
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border: none;
+    overflow:hidden;
+    text-align: center;
+}
+
+.modTable table .formControl{
+    padding: 0px 0px 0px 10px;
+    width: 890px;
+    height: 30px;
+    outline: none;
+    border: none;
+    overflow:hidden
+}
+
+.modTable table .formControl2{
+    padding: 0px 0px 0px 10px;
+    width: 787px;
+    height: 40px;
+    outline: none;
+    border: none;
+    overflow:hidden
+}
+
+.modTable table .formControl3{
+	width: 0px;
+}
+
+
+
+.modTable table .btnControl{
+    background-color: #474757;
+    display: inline-block;
+    border: none;
+    width: 100px;
+    height: 53px;
+    color: #fff;
+    font-size: 15px;
+    line-height: 52px;
+    cursor: pointer;
+}
+
+.modTable table .btnControl:hover{
+    background-color: #2d2d38;
+    cursor:pointer;
+}
+
+.modTable table .btnControl2{
+	display: inline-block;
+    background-color: #474757;
+    border: none;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.modTable table .btnControl2:hover{
+    background-color: #2d2d38;
+    cursor:pointer;
+}
+
+
+.fileLocalBox{
+    /* background-color: aqua; */
+}
+
+.fileLocalBox ul{
+    /* background-color: rgb(154, 251, 178); */
+    display: flex;
+}
+
+.fileLocalBox ul .fList1{
+    background-color: #eee;
+    width: 70px;
+    height: 30px;
+    border: 1px solid #222;
+    margin-right: 10px;
+    padding-left: 10px;
+    line-height: 30px;
+}
+
+.fileLocalBox ul .fList2 .formControl{
+    padding: 0px 0px 0px 10px;
+    width: 600px;
+    height: 30px;
+    outline: none;
+    overflow:hidden;
+    margin-right: 200px;
+}
+
+.fileLocalBox ul .fList3 .btnControl{
+    background-color: #474757;
+    border: none;
+    width: 100px;
+    height: 30px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.fileLocalBox ul .fList3 .btnControl:hover{
+    background-color: #2d2d38;
+    cursor:pointer;
+}
+
+.modTable table .textareaControl{
+    margin: 0px 0px -5px 0px;
+    border: none;
+    resize: none;
+    width: 890px;
+    height: 300px;
+    outline: none;
+}
+
+.textareaControl::-webkit-scrollbar {
+    width: 13px;
+}
+.textareaControl::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+.textareaControl::-webkit-scrollbar-track {
+    background-color: #eee;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}

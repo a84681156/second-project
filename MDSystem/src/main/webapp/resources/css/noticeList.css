@@ -1,0 +1,225 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    color: #222;
+}
+
+ul, li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #222;
+}
+
+img{
+    vertical-align: top;
+    border: 0;
+}
+/* ==================================================== */
+
+#container{
+    /* background-color: aliceblue; */
+    margin-top: 10px;
+}
+
+#container #noticeBox{
+    /* background-color: antiquewhite; */
+    width: 1000px;
+    margin: 0 auto;
+    /* border: 1px solid #222; */
+    padding: 10px;
+}
+
+
+
+/* 공지사항리스트 검색 */
+
+#noticeBox .scBar{
+    /* background-color: aqua; */
+    margin-bottom: 10px;
+}
+
+.scBar ul{
+    /* background-color: aquamarine; */
+    display: flex;
+
+    width: 100%;
+}
+
+.scBar ul li{
+    /* background-color: beige; */
+}
+
+.scBar ul li span{
+    display: inline-block;
+    font-size: 15px;
+
+}
+
+.scBar ul .scList1{
+    background-color: #eee;
+    width: 100px;
+    height: 30px;
+    border: 1px solid #222;
+    margin-right: 20px;
+}
+
+.scBar ul .scList1 select{
+    text-align: center;
+    text-align-last: center;
+    width: 100px;
+    height: 30px;
+    background: url('https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png') calc(100% - 5px) center no-repeat;
+    background-size: 20px;
+    border: 1px solid #888;
+    outline: none;
+}
+
+.scBar ul .scList1 select:hover{
+    border: 1px solid #222;
+}
+
+.scBar ul .scList1 select:focus{
+    border-color: 222;
+    outline: 0;
+    border-width: 1px;
+  }
+  
+.scBar ul .scList1 select option{
+    background: #222;
+    color: #fff;
+    padding: 3px 0;
+}
+
+.scBar ul .scList2{
+    margin-right: 20px;
+}
+
+.scBar ul .scList2 .formControl{
+    padding: 0px 0px 0px 10px;
+    width: 280px;
+    height: 30px;
+    border: 1px solid #888;
+}
+
+.scBar ul .scList2 .formControl:hover{
+    border: 1px solid #222;
+}
+
+.scBar ul .scList2 .formControl:focus{
+    border-color: #222;
+    outline: 0;
+    border-width: 1px;
+}
+
+.scBar ul .scList3 .btnControl{
+    background-color: #474757;
+    border: none;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.scBar ul .scList3 .btnControl:hover{
+    background-color: #2d2d38;
+    cursor:pointer;
+}
+
+.scBar ul .scList4{
+	/* background-color: red; */
+	display: flex;
+	width: : 400px;
+	margin-left: 340px;
+}
+
+.scBar ul .scList4 .btnControl{
+    background-color: #474757;
+    border: none;
+    width: 80px;
+    height: 30px;
+    color: #fff;
+    font-size: 15px;
+    margin-left: 15px;
+}
+
+.scBar ul .scList4 .btnControl:hover{
+    background-color: #2d2d38;
+    cursor:pointer;
+}
+
+
+/* 공지사항리스트 */
+
+#noticeBox .noticeListBox{
+    /* background-color: rgb(210, 245, 177); */
+    width: 980px; 
+    height: 500px; 
+    border : 2px solid #222;
+    padding: 30px 10px 30px 10px;
+}
+
+#noticeBox .noticeListTable{
+     /* background-color: rgb(211, 177, 245); */
+     width: 100%; 
+     height: 100%; 
+     border : 2px solid #222;
+     margin-bottom: 10px;
+     overflow: auto;
+     display: block;
+}
+
+.noticeListTable table{
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border : 2px solid #222;
+    border-collapse : collapse;
+    table-layout: fixed;
+}
+
+
+.noticeListTable table th{
+    background-color: #eee;
+    position: sticky;
+    top: 0;
+    padding: 5px;
+}
+
+.noticeListTable table td{
+    background-color: #fff;
+    padding-left: 5px;
+    height: 40px;
+    text-align: center;
+    padding: 10px;
+    white-space:nowrap;
+    text-overflow:ellipsis; 
+    overflow:hidden;
+}
+
+.noticeListTable::-webkit-scrollbar {
+    width: 13px;
+}
+.noticeListTable::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+.noticeListTable::-webkit-scrollbar-track {
+    background-color: #eee;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}

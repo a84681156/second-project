@@ -1,0 +1,218 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    color: #222;
+}
+
+ul, li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #222;
+}
+
+img{
+    vertical-align: top;
+    border: 0;
+}
+/* ==================================================== */
+#container{
+    /* background-color: aliceblue; */
+    margin-top: 20px;
+}
+
+#container #noticeWrtBox{
+    /* background-color: antiquewhite; */
+    width: 1000px;
+    margin: 0 auto;
+    /* border: 1px solid #222; */
+    padding: 10px;
+}
+
+
+
+/* 공지상세보기 및 수정 */
+
+#noticeWrtBox .wrtTable{
+    /* background-color: rgb(211, 177, 245); */
+    width: 980px; 
+    height: 445px; 
+    padding: 10px 10px 10px 10px;
+    border : 2px solid #222;
+    margin-bottom: 10px;
+}
+
+.wrtTable table{
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border : 2px solid #222;
+    border-collapse : collapse;
+    /* table-layout: fixed; */
+}
+
+.wrtTable tr,th,td{
+    border : 2px solid #222;
+}
+
+.wrtTable th{
+    background-color: #eee;
+    width: 100px;
+    padding: 5px;
+}
+
+.wrtTable td{
+    background-color: #fff;
+    padding-left: 5px;
+    white-space:nowrap;
+    text-overflow:ellipsis; 
+    overflow:hidden;
+}
+
+.wrtTable table .formControl0{
+    padding: 0px 0px 0px 10px;
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border: none;
+    overflow:hidden;
+    text-align: center;
+}
+
+.wrtTable table .formControl{
+    padding: 0px 0px 0px 10px;
+    width: 890px;
+    height: 30px;
+    outline: none;
+    border: none;
+    overflow:hidden
+}
+
+.wrtTable #cont{
+	width: 800px;
+    height: 200px;
+}
+
+.wrtTable table .formControl2{
+	width: 700px;
+	height: 30px;
+    outline: none;
+    border: none;
+    overflow:hidden
+}
+
+.wrtTable table .formControl3{
+	width: 0px;
+}
+
+
+.wrtTable table .btnControl{
+    background-color: #474757;
+    display: inline-block;
+    border: none;
+    width: 100px;
+    height: 53px;
+    color: #fff;
+    font-size: 15px;
+    line-height: 52px;
+    cursor: pointer;
+}
+
+.wrtTable table .btnControl:hover{
+    background-color: #2d2d38;
+    cursor:pointer;
+}
+
+.wrtTable table .btnControl2{
+	display: inline-block;
+    background-color: #474757;
+    border: none;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.wrtTable table .btnControl2:hover{
+    background-color: #2d2d38;
+    cursor:pointer;
+}
+
+.wrtTable table .btnControl3{
+	display: inline-block;
+    background-color: #474757;
+    border: none;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.wrtTable table .btnControl3:hover{
+    background-color: #2d2d38;
+    cursor:pointer;
+}
+
+.btnBox ul{
+    /* background-color: rgb(154, 251, 178); */
+    display: flex;
+}
+
+.btnBox .btnControl{
+    background-color: #474757;
+    border: none;
+    width: 100px;
+    height: 30px;
+    color: #fff;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.btnBox .btnControl:hover{
+    background-color: #2d2d38;
+    cursor:pointer;
+}
+
+.wrtTable table .textareaControl{
+    margin: 0px 0px -5px 0px;
+    border: none;
+    resize: none;
+    width: 890px;
+    height: 300px;
+    outline: none;
+}
+
+.textareaControl::-webkit-scrollbar {
+    width: 13px;
+}
+.textareaControl::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+.textareaControl::-webkit-scrollbar-track {
+    background-color: #eee;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}

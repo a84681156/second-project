@@ -1,0 +1,331 @@
+@RequestMapping(value="/noticeModify", method = RequestMethod.POST)
+	public String noitceModify(MultipartFile file, noticeDto dto) {
+		try {
+			if(file == null || file.isEmpty()) {
+				System.out.println("비었삼");
+			}else {
+				String fullPath = Path + file.getOriginalFilename();
+				//파일명 
+				dto.setATC_FILE(file.getOriginalFilename());
+				
+				//파일 주소 
+				dto.setATC_FILE_PS(fullPath);
+				file.transferTo(new File(fullPath));
+			}
+			
+			ns.noticeUpdate(dto);
+			
+			
+			System.out.println("아마 업로드 완료 ?");
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return "redirect:notice";
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+	@RequestMapping(value = "/noticeWrite", method = RequestMethod.POST)
+	public String noticeWrite(MultipartFile uploadfile, noticeDto dto) {
+		
+		try {
+			
+			
+			if(uploadfile == null || uploadfile.isEmpty()) {
+				System.out.println("오류");
+			}else {
+				// uploadfile.getOriginalFilename() <-- 파일절대이름
+				String fullPath = Path + uploadfile.getOriginalFilename();
+				
+				// 파일 사이즈 체크
+				byte fileDate[] = uploadfile.getBytes();
+				System.out.println("파일 저장 위치 =  " + fullPath);
+				
+				//파일명 
+				dto.setATC_FILE(uploadfile.getOriginalFilename());
+				
+				
+				//파일 주소 
+				dto.setATC_FILE_PS(fullPath);
+				
+				ns.noticeWrite(dto);
+				
+				//파일 fullPath위치에 새로 저장 
+				uploadfile.transferTo(new File(fullPath));
+				System.out.println("아마 업로드 완료 ?");
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return "redirect:notice";
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>공지사항-수정</title>
+<link rel="stylesheet" type="text/css" href="./resources/css/noticeModify.css">
+</head>
+<body>
+	<jsp:include page="./Include/menu.jsp"/>
+	
+	<header>
+        <p>제목 검색</p>
+        <div class="search-box">
+            <div class="select-box">
+                <select name="" id="">
+                    <option value="">전체</option>
+                    <option value="">제목</option>
+                    <option value="">작성자</option>
+                    <option value="">내용</option>
+                </select>
+            </div>
+            <input type="text">
+        </div>
+        <a class="img"></a>
+    </header>
+
+    <section>
+    	<form action="noticeModify" method="POST" enctype="multipart/form-data">
+        	<input type="hidden" value="${NoticeInfo.SEQ_NO }" name="SEQ_NO">
+            <input type="hidden" value="${info.SABUN }" name="LST_INPUT_EMPL_NO">
+        	<table>	
+                <tr>
+                    <th>등록일</th>
+                    <td><input type="text" value="${NoticeInfo.ERL_DY }" class="sday" readonly></td>
+                    <th>작성자</th>
+                    <td><input class="wrt_name" type="text" value="${NoticeInfo.NAME} ${NoticeInfo.LEVEL}" readonly></td>
+                </tr>
+                <tr>
+                	<th>제목</th>
+                    <td colspan="3"><input class="title" value="${NoticeInfo.TITLE }" name="TITLE" type="text"></td>
+                </tr>
+                <tr class="cont_box">
+                    <th>내용</th>
+                    <td colspan="3">
+                        <textarea name="CONT"  cols="30" rows="10">${NoticeInfo.CONT }</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th>첨부파일명</th>
+                    <td class="file_box" colspan="3">
+                        <input class="upload_Name" value="${NoticeInfo.ATC_FILE }" name="ATC_FILE" placeholder="첨부파일명" readonly>
+                        <label for="file">파일찾기</label>
+                        <input type="file" id="file" value="${NoticeInfo.ATC_FILE }" name="file">
+                    </td>
+                </tr>
+            </table>
+
+        <div class="btn_box">
+                <label id="Route">파일위치</label>
+                <input type="text" class="upload_Route"	value="${NoticeInfo.ATC_FILE_PS }" name="ATC_FILE_PS" placeholder="첨부파일경로" readonly>
+                <input type="text" class="file_size" readonly>
+                <button type="submit">수정</button>
+        </div>
+        </form>
+    </section>
+    
+    <script>
+    var file = document.querySelector("#file");
+
+    file.addEventListener('change', function(){
+    	var up_name = document.querySelector(".upload_Name");
+        var up_route = document.querySelector(".upload_Route");
+        var size = event.target.files[0].size;
+        up_name.value = null;
+        up_route.value = null;
+    	
+    	
+    	if(!(sizeCheck(size))){
+    		file.value = null;
+    		alert("파일 사이즈가 너무 큽니다 10MB 미만으로 올려주십시오");
+    		return false;
+    	}
+    	
+    	console.log("뭐야 왜안됨?")
+        var fileRoute = file.value;
+        var fileName = fileRoute.split("\\");
+        var fileName = fileName[fileName.length-1];
+		
+        up_name.value = fileName;
+        up_route.value = fileRoute;
+
+    })
+    
+    function sizeCheck(size){
+    	var file_size = document.querySelector(".file_size");
+    	const max = 1024 * 1024 * 10;
+    	const Kmax = 1024 * 100;
+    	const Ksize = Math.floor((size / 1024) * 100) / 100;
+    	const Msize = Math.floor(Ksize / 1024);
+    	
+    	if(size > max){
+    		return false;
+    	}
+    	
+    	if(size < Kmax){
+    		file_size.value = Ksize + "KB / 최대 10MB";
+    		
+    	}else if(size < max){
+    		file_size.value = Msize + "MB / 최대 10MB";
+    		
+    	}
+    	
+    	return true;
+    }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="./resources/css/noticeWrite.css">
+<title>공지사항 글쓰기</title>
+</head>
+<body>
+	<container>		<!-- enctype="multipart/form-data" 설정이 있어야 multipartFile 사용 가능  -->
+        <form method="post" action="noticeWrite" enctype="multipart/form-data"> 
+        	<input type="hidden" value="${info.BSNM_NO }" name="BSNM_NO">
+            <input type="hidden" value="${info.SABUN }" name="WRT_SABUN">
+            <input type="hidden" value="${info.NAME }" name="FRT_INPUT_EMPL_NO">
+            <table>
+            	
+                <tr>
+                    <th>제목</th>
+                    <td><input class="title" name="TITLE" type="text"></td>
+                    <th>작성자</th>
+                    <td><input class="wrt_name" type="text" value="${info.NAME} ${info.LEVEL}" readonly></td>
+                </tr>
+                <tr class="cont_box">
+                    <th>내용</th>
+                    <td colspan="3">
+                        <textarea name="CONT" id="" cols="30" rows="10"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th>첨부파일명</th>
+                    <td class="file_box" colspan="3">
+                        <input class="upload_Name" placeholder="첨부파일명" readonly>
+                        <label for="file">파일찾기</label>
+                        <input type="file" id="file" name="uploadfile">
+                    </td>
+                </tr>
+            </table>
+            
+            <div class="btn_box">
+                <label id="Route">파일위치</label>
+                <input type="text" class="upload_Route" placeholder="첨부파일경로" readonly>
+                <input type="text" class="file_size" value=""  readonly>
+                <button type="submit">등록</button>
+            </div>
+        </form>
+    </container>
+
+    <script>
+        var file = document.querySelector("#file");
+
+        file.addEventListener('change', function(){
+        	var up_name = document.querySelector(".upload_Name");
+            var up_route = document.querySelector(".upload_Route");
+            var size = event.target.files[0].size;
+            up_name.value = null;
+            up_route.value = null;
+        	
+        	
+        	if(!(sizeCheck(size))){
+        		file.value = null;
+        		alert("파일 사이즈가 너무 큽니다 10MB 미만으로 올려주십시오");
+        		return false;
+        	}
+        	
+        	console.log("뭐야 왜안됨?")
+            var fileRoute = file.value;
+            var fileName = fileRoute.split("\\");
+            var fileName = fileName[fileName.length-1];
+			
+            up_name.value = fileName;
+            up_route.value = fileRoute;
+
+        })
+        
+        function sizeCheck(size){
+        	var file_size = document.querySelector(".file_size");
+        	const max = 1024 * 1024 * 10;
+        	const Kmax = 1024 * 100;
+        	const Ksize = Math.floor(( size / 1024) * 100) / 100;
+        	const Msize = Math.floor(Ksize / 1024);
+        	
+        	if(size > max){
+        		return false;
+        	}
+        	
+        	if(size < Kmax){
+        		file_size.value = Ksize + "KB / 최대 10MB";
+        		
+        	}else if(size < max){
+        		file_size.value = Msize + "MB / 최대 10MB";
+        		
+        	}
+        	
+        	return true;
+        }
+    </script>
+</body>
+</html>

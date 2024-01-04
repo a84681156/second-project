@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.md.sys.dao.Tsp02210Dao">
+  
+	<!-- 위험성평가-리스트+검색 -->
+  	<select id="listSC" parameterType="SearchCondition" resultType="map">
+  		EXEC proc_tsp02210_listSC #{option}, #{option2}, #{str_date}, #{end_date}
+  	</select>
+  	
+  	<!-- 위험성평가-글작성 -->
+  	<insert id="add" parameterType="Tsp02210Dto">
+  		EXEC proc_tsp02210_add 
+  		#{bsnm_no},#{evlcm_dy},#{cd_prs},#{seq_no},#{det_job},#{cd_risk_cls},#{basis},#{rsk_item_type},#{cut_sft_act},
+  		#{loc_ptn_psn},#{func},#{imprtn},#{evl_std},#{risk},#{evl_chg},#{rsk_item},#{rec_pln},#{rsk_ok_yn},#{perm_std},
+  		#{cd_risk_mng},#{rsk_ctl_cnt},#{mng_sabun},#{mng_dy},#{mng_risk},#{mng_risk_lev},#{rsk_file},#{rsk_file_ps},
+  		#{rskok_file},#{rskok_file_ps},#{cmp_dy},#{sabun}
+  	</insert>
+  	
+  	<!-- 위험성평가-글수정 -->
+  	<update id="mod" parameterType="Tsp02210Dto">
+  		EXEC proc_tsp02210_mod
+  		#{bsnm_no},#{evlcm_dy},#{cd_prs},#{seq_no},#{det_job},#{cd_risk_cls},#{basis},#{rsk_item_type},#{cut_sft_act},
+  		#{loc_ptn_psn},#{func},#{imprtn},#{evl_std},#{risk},#{evl_chg},#{rsk_item},#{rec_pln},#{rsk_ok_yn},#{perm_std},
+  		#{cd_risk_mng},#{rsk_ctl_cnt},#{mng_sabun},#{mng_dy},#{mng_risk},#{mng_risk_lev},#{rsk_file},#{rsk_file_ps},
+  		#{rskok_file},#{rskok_file_ps},#{cmp_dy},#{sabun}
+  	</update>
+  	
+  	<!-- 위험성평가-글삭제 -->
+  	<delete id="del" parameterType="map">
+  		EXEC proc_tsp02210_del #{seq_no}
+  	</delete>
+  	
+  	<!-- 위험성평가-글상세 -->
+  	<select id="read" parameterType="map" resultType="map">
+  		EXEC proc_tsp02210_read #{seq_no}
+  	</select>
+  	
+  	<!-- 위험성평가-글번호가져오기 -->
+  	<select id="nextSeqNo" resultType="int">
+  		EXEC proc_tsp02210_seqNo
+  	</select>
+  </mapper>

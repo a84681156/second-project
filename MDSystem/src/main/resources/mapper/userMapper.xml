@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.md.sys.dao.UserDao">
+    <!-- 회원로그인 -->
+    <select id="login" parameterType="map" resultType="map">
+    	EXEC proc_tsp06210_login #{sabun}, #{passwd} 
+    </select>
+	
+	<!-- 사용자드록현황-사용자이름 검색 -->
+	<select id="searchUserName" parameterType="String" resultType="UserDto">
+		EXEC proc_tsp06210_nameSC #{keyword}
+	</select>
+	
+	<!-- 사용자등록현황-사용자 검색 -->
+	<select id="searchUserList" parameterType="SearchCondition" resultType="UserDto">
+		SELECT ROW_NUMBER() OVER(ORDER BY sabun DESC) AS ROWNUM, A.*
+		FROM (SELECT 
+				TOP 100 PERCENT
+				sabun ,
+				CASE WHEN cd_hffc = 'W' THEN '재직'
+					WHEN cd_hffc = 'H' THEN '휴직'
+					ELSE '퇴직'
+				END AS cd_hffc,
+				name,
+				[level], 
+				CASE WHEN dept_code = 'P0001' THEN '개발부' 
+					WHEN dept_code = 'P0002' THEN '인사부'
+					WHEN dept_code = 'P0003' THEN '영업부'
+					WHEN dept_code = 'P0004' THEN '회계부'
+					WHEN dept_code = 'P0005' THEN '총무부'
+					WHEN dept_code = 'P0006' THEN '기확부'			 
+				END AS dept_code,
+				
+				CASE WHEN cd_edum_gn = 'S0001' THEN '안전보건직무1' 
+					WHEN cd_edum_gn = 'S0002' THEN '안전보건직무2'
+					WHEN cd_edum_gn = 'S0003' THEN '안전보건직무3'
+				END AS cd_edum_gn,
+				
+				CASE WHEN cd_user_gt = 'MNG' THEN '관리권한' 
+					WHEN cd_user_gt = 'SUP' THEN '마스터권한'
+					WHEN cd_user_gt = 'GEN' THEN '일반권한'
+				END AS cd_user_gt,
+				tel_no, 
+				in_num
+			FROM tsp06210
+			WHERE 1=1 <include refid="searchCondition"/>
+			ORDER BY name) A
+	</select>
+	
+	<!-- 사용자등록현황-검색 컨디션모드 sql -->
+	<sql id = "searchCondition">
+		<if test="dept_nm !=null and dept_nm != '' and name !=null and name != ''">
+			<choose>
+				<when test='cd_hffc == "a"'>
+					AND dept_nm LIKE '%'+ #{dept_nm} + '%' AND name LIKE '%'+ #{name} + '%' 
+				</when>
+				<when test='cd_hffc == "w"'>
+					AND dept_nm LIKE '%'+ #{dept_nm} + '%' AND name LIKE '%'+ #{name} + '%' AND cd_hffc LIKE 'W'
+				</when>
+				<when test='cd_hffc == "h"'>
+					AND dept_nm LIKE '%'+ #{dept_nm} + '%' AND name LIKE '%'+ #{name} + '%' AND cd_hffc LIKE 'H'
+				</when>
+				<when test='cd_hffc == "r"'>
+					AND dept_nm LIKE '%'+ #{dept_nm} + '%' AND name LIKE '%'+ #{name} + '%' AND cd_hffc LIKE 'R'
+				</when>
+			</choose>
+		</if>
+	</sql>
+
+	<!-- 사용자관리-상세정보 -->
+	<select id="scUser" parameterType="String" resultType="UserDto">
+		EXEC proc_tsp06210_scUser #{sabun} 
+	</select>
+	
+	<!-- 사용자관리-상세정보-비밀번호변경 -->
+	<update id="modPwd" parameterType="UserDto">
+		EXEC proc_tsp06210_modPwd #{sabun}, #{name}, #{passwd}, #{modPasswd}
+	</update>
+	
+	<!-- 사용자관리-상세정보-비밀번호초기화 -->
+	<update id="resetPwd" parameterType="UserDto">
+		EXEC proc_tsp06210_resetPwd #{sabun}, #{name}
+	</update>
+	
+	<!-- 사용자관리-상세정보-사용자추가화면(다음사번가져오기 + 코드가져오기) -->
+	<select id="userAddInfo" resultType="String">
+		EXEC proc_tsp06210_addPage
+	</select>
+	
+	<!-- 사용자관리-상세정보-사용자추가 -->
+	<insert id="userAdd" parameterType="UserDto">
+		EXEC proc_tsp06210_add #{bsnm_no}, #{sabun}, #{passwd}, #{cd_hffc}, #{name}, #{level}, #{sa_code}, 
+								#{sa_nm}, #{dept_code}, #{dept_nm}, #{cd_user_gt}, #{email}, #{hp_no}, #{tel_no}, 
+								#{in_num}, #{cd_edum_gn}, #{spc_edu_yn}, #{ent_co_dy}, #{job_ch_dy}, #{layo_st_dy}, 
+								#{layo_en_dy}, #{ret_dy}, #{pet_edu_yn}, #{frt_input_empl_no}, #{lst_input_empl_no}
+	</insert>
+	
+	<!-- 사용자관리-상세정보-사용자수정 -->
+	<update id="userMod" parameterType="UserDto">
+		EXEC proc_tsp06210_mod #{bsnm_no}, #{sabun}, #{passwd}, #{cd_hffc}, #{name}, #{level}, #{sa_code}, 
+								#{sa_nm}, #{dept_code}, #{dept_nm}, #{cd_user_gt}, #{email}, #{hp_no}, #{tel_no}, 
+								#{in_num}, #{cd_edum_gn}, #{spc_edu_yn}, #{ent_co_dy}, #{job_ch_dy}, #{layo_st_dy}, 
+								#{layo_en_dy}, #{ret_dy}, #{pet_edu_yn}, #{frt_input_dy}, #{frt_input_empl_no},
+								#{lst_input_dy}, #{lst_input_empl_no}
+	</update>
+	
+	<!-- 사용자관리-상세정보-사용자삭제 -->
+	<delete id="userDel" parameterType="String">
+		EXEC proc_tsp06210_del #{sabun}
+	</delete>
+	
+	<!-- 사용자관리-상세정보-사용자검색 -->
+	<select id="searchUserDetail" parameterType="SearchCondition" resultType="UserDto">
+		EXEC proc_tsp06210_detailSC #{cd_hffc}, #{dept_code}, #{sa_code}
+	</select>
+</mapper>
+ 	

@@ -1,0 +1,454 @@
+@charset "UTF-8";
+
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    color: #222;
+}
+
+ul, li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #222;
+}
+
+img{
+    vertical-align: top;
+    border: 0;
+}
+/* ==================================================== */
+
+/* 제목 및 네비게시션버튼 */
+
+.contents_wrap_tsp05100_page{
+	/* background-color: gray; */
+}
+
+.contents_wrap_tsp05100_page .page-title-wrap{
+	/* background-color: aqua; */
+	width: 1000px;
+    margin: 0 auto;
+    /* border: 1px solid #222; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.page-title-wrap h2{
+	/* background-color: green; */
+	width: 130px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	margin-bottom: 10px;
+}
+
+.page-title-wrap ul{
+	/* background-color: red; */
+	display: flex;
+	border-bottom: 1px solid #aaa;
+}
+
+.page-title-wrap ul li{
+	/* background: blue; */
+	width: 180px;
+	height:40px;
+	border: 1px solid #aaa;
+	text-align: center;
+	line-height: 40px;
+	font-size: 17px;
+}
+
+.page-title-wrap ul li:hover{
+	border: 1px solid #000;
+}
+
+
+/* 검색박스 */
+
+.contents_wrap_tsp05100_page .search_wrap_active{
+	background-color: #eee;
+	width: 1000px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.search_wrap_active .sch_box{
+	/* background-color: gray; */
+	height: 50px;
+}
+
+.sch_box ul{
+	/* background-color: black; */
+	display: flex;
+}
+
+.sch_box ul li{
+	/* background-color: blue; */
+	line-height: 50px;
+    margin-right: 10px;
+}
+
+.sch_box ul .sc1 select{
+	background-color: #fff;
+    text-align: center;
+    text-align-last: center;
+    width: 100px;
+    height: 30px;
+    /* background: url('https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png') calc(100% - 5px) center no-repeat; */
+    background-size: 20px;
+    border: 1px solid #aaa;
+    outline: none;
+
+}
+
+.sch_box ul .sc1 select:hover{
+    border: 1px solid #222;
+}
+
+.sch_box ul .sc1 select:focus{
+    border-color: #222;
+    outline: 0;
+    border-width: 1px;
+  }
+  
+.sch_box ul .sc1 select option{
+    background: #222;
+    color: #fff;
+    padding: 3px 0;
+}
+
+.sch_box ul .sc2 .formControl{
+    padding: 0px 0px 0px 10px;
+    width: 280px;
+    height: 30px;
+    border: 1px solid #aaa;
+}
+
+.sch_box ul .sc2 .formControl:hover{
+    border: 1px solid #222;
+}
+
+.sch_box ul .sc2 .formControl:focus{
+    border-color: #222;
+    outline: 0;
+    border-width: 1px;
+}
+
+.sch_box ul .sc3 .btnControl{
+    background-color: rgb(255, 70, 70);
+    border: none;
+    width: 80px;
+    height: 32px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-left: 480px;
+}
+
+.sch_box ul .sc3 .btnControl:hover{
+    background-color: red;
+    cursor:pointer;
+}
+
+/* 테이블 섹션 */
+
+.tsp05100_container{
+	/* background-color: aqua; */
+	width: 1000px;
+    margin: 0 auto;
+    /* border: 1px solid #222; */
+	padding-top: 10px;
+	padding-bottom: 10px;
+	display: flex;
+}
+
+.tsp05100_container .tsp05100_list{
+	/* background-color: red; */
+	width: 585px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-right: 10px;
+	min-height: 390px;
+}
+
+ .tsp05100_list .title_wrap{
+ 	/* background-color: aqua; */
+ 	display: flex;
+ 	justify-content: space-between;
+ 	margin-bottom: 10px;
+ }
+
+.title_wrap .title_zone h2{
+	/* background-color: green; */
+	width: 220px;
+	height: 30px;
+	line-height: 30px;
+}
+
+.title_wrap .btn_right_box{
+	/* background-color: blue; */
+}
+
+.title_wrap .btn_right_box .btnControl{
+    background-color: #474757;
+    border: none;
+    width: 80px;
+    height: 30px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.title_wrap .btn_right_box .btnControl:hover{
+    background-color: #2d2d38;
+    cursor:pointer;
+}
+
+.tsp05100_container .tsp05100_read{
+	/* background-color: blue; */
+	width: 405px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+ .tsp05100_read .title_wrap{
+ 	/* background-color: aqua; */
+ 	display: flex;
+ 	justify-content: space-between;
+ 	margin-bottom: 10px;
+ }
+
+.tsp05100_read .table_wrap{
+	/* background-color: aqua; */
+	width: 385px;
+}
+
+.table_wrap .table2{
+	/* background-color: red; */
+	width: 100%;
+    border-collapse : collapse;
+    border-top: 2px solid #222;
+}
+
+.table2 tr th{
+	background-color: #eee;
+}
+
+.table2 tr td{
+	padding: 5px;
+}
+
+.table2 tr td .formControl{
+    padding: 0px 0px 0px 10px;
+    width: 250px;
+    height: 30px;
+    border: 1px solid #aaa;
+    text-align: center;
+    line-height: 30px;
+}
+
+.table2 tr td .formControl:hover{
+    border: 1px solid #222;
+}
+
+.table2 tr td .formControl:focus{
+    border-color: #222;
+    outline: 0;
+    border-width: 1px;
+}
+
+.table2 tr td .formControl2{
+    padding: 0px 0px 0px 10px;
+    width: 179px;
+    height: 30px;
+    border: 1px solid #aaa;
+    text-align: center;
+    line-height: 30px;
+}
+
+.table2 tr td .formControl2:hover{
+    border: 1px solid #222;
+}
+
+.table2 tr td .formControl2:focus{
+    border-color: #222;
+    outline: 0;
+    border-width: 1px;
+}
+
+.table2 tr td .btnControl{
+    background-color: #474757;
+    border: none;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.table2 tr td .btnControl:hover{
+    background-color: #2d2d38;
+    cursor:pointer;
+}
+
+.table2 tr td .btnControl2{
+	display: inline-block;
+    background-color: #474757;
+    border: none;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.table2 tr td .btnControl2:hover{
+    background-color: #2d2d38;
+    cursor:pointer;
+}
+
+.table2 tr td .btnControl3{
+	display: inline-block;
+    background-color: #474757;
+    border: none;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-left: 5px;
+  	display: none;
+}
+
+.table2 tr td .btnControl3:hover{
+    background-color: #2d2d38;
+    cursor:pointer;
+}
+
+.table2 tr td #law_file{
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+
+
+/* 모달창 */
+.tsp05100_modal{
+	width: 1000px;
+	height: 500px;
+	margin: 0 auto;
+	border: 1px solid #222;
+}
+
+.tsp05100_modal .title_zone .btnControl{
+	background-color: #474757;
+    border: none;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+    font-size: 40px;
+}
+
+.tsp05100_modal .title_zone .btnControl:hover{
+    background-color: #2d2d38;
+    cursor:pointer;
+}
+
+.tsp05100_modal .tsp05100_modal_box{
+	background-color: #fff;
+	width: 100%;
+	height: 420px;
+	padding: 20px;
+}
+
+/* 모달검색 */
+.tsp05100_modal_box .sch_box{
+	background-color: #eee;
+	width: 100%;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+}
+
+.tsp05100_modal_box .sch_box ul{
+	/* background-color: black; */
+	display: flex;
+	justify-content: space-between;
+}
+
+.tsp05100_modal_box .sch_box ul li{
+	/* background-color: blue; */
+	line-height: :50px;
+}
+
+.tsp05100_modal_box .sch_box ul .sc1 .txtControl{
+	width:50px;
+	text-align: center;
+	font-size: 16px;
+}
+
+.tsp05100_modal_box .sch_box ul .sc1 .formControl{
+    padding: 0px 0px 0px 10px;
+    width: 280px;
+    height: 30px;
+    border: 1px solid #aaa;
+}
+
+.tsp05100_modal_box .sch_box ul .sc1 .formControl:hover{
+    border: 1px solid #222;
+}
+
+.tsp05100_modal_box .sch_box ul .sc1 .formControl:focus{
+    border-color: #222;
+    outline: 0;
+    border-width: 1px;
+}
+
+.tsp05100_modal_box .sch_box ul .sc2 .btnControl{
+    background-color: rgb(255, 70, 70);
+    border: none;
+    width: 80px;
+    height: 32px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.tsp05100_modal_box .sch_box ul .sc2 .btnControl:hover{
+    background-color: red;
+    cursor:pointer;
+}
+
+.tsp05100_modal_box .table_wrap{
+	/* background-color: blue; */
+	padding-top: 20px;
+}

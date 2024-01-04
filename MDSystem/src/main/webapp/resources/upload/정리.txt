@@ -1,0 +1,81 @@
+1.UserInfoEncrypt.encryptStringData 암호화
+2.equalsIgnoreCase 문자열 비교 대소문자구분x
+3.equals 문자열비교 대소문자구분o
+
+4.HttpServletRequest 
+클라이언트서버로부터 요청을 받으면
+요청정보에 있는 경로(컨트롤러,서블릿)로 get or post로 정보를 보냄. 그 떄 자동적으로 
+HttpServletRequest객체에 정보들이 저장됨.
+(Header정보, Parameter(받아온값), Cookie, URI, URL 등의 정보도 포함)
+1)원하는 정보를 꺼낼때 getPrameter()사용(String타입)
+2)헤더의 정보를 꺼낼때는 getHeader()
+request.getHeader("referer"); // 접속 경로
+request.getHeader("user-agent"); // 유저의 시스템 정보
+request.getHeader("host"); // 접속 ip
+request.getHeader("User-Agent"); // 브라우져 정보 가져오기
+
+//프로젝트마다 서버 환경이나 프록시 등 중개서버가 다르기에 
+Util로 만들어 놓은 코드이다.(다 IP가져오는 명령어)
+HTTP_CLIENT_IP
+HTTP_X_FORWARDED_FOR
+X-Real-IP
+X-RealIP
+REMOTE_ADDR
+request.getHeader("WL-Proxy-Client-IP")
+request.getHeader("Proxy-Client-IP")
+request.getHeader("X-Forwarded-For") // 클라이언트 ip 주소 가져오기
+
+
+
+5.HttpServletResponse
+Servlet은 HttpServletResponse객체에 Content Type, 응답코드, 응답 메시지등을 담아서 전송함
+
+6.Servlet : MVC 패턴에서의 컨트롤러로 이용된다
+
+
+7.Map : entrySet keySet 
+1)반환타입에 map을 사용하면 현재내가 hashMap을 사용했지만
+나중에 tree나 linked를 사용할 때 코드의 수정없이 유지보수가 가능
+2)객체에 들어가있는 정보를 꺼낼땐 get("key")사용
+3)그냥 뷰에서 받아온 id, pw로 db까지가서 정보를 가져오면되는데
+굳이 map에 넣어서 쓰는이유 : 유지보수(만약 필요한 값이 id,pw,00으로 하나가
+더 늘어나면 controller, service다 바꿔줘야하는데 map을 쓰면 map만 바꿔주면된다.
+
+8.iterator : List같은 순서가 있는것에서는 for가 사용가능하지만
+Set에서는 사용불가능 그래서 iterator기능이 있음
+또한 iterator는 next, previous같은 기능으로
+앞에서 출발하거나 뒤에서 출발가능
+또한 hasNext와 같은 기능으로 더 많은 요소가 있는지 확인가능
+
+
+
+ajax object형식으로 보낼땐 키값만 잘 맞춰주면 벨류값은 알아서 들어가기 때문에 JSON.stringify에 키값만 적어줘도 된다.
+따로 변수 만들어서 값 넣어서 ajax안에는 변수명만 넣어주면 보기펴vks
+
+ipv4변경방법 구글링하면나옴 run config argument
+
+ajax POST, object로 보낼때는 받을때도 object인 dto로 받아야함 보낼때도 JSON.stringify에담아보냄
+GET은 뭘로 받아도댐  보낼때 주소에 쿼리스트링으로 보냄
+================================
+- ui 화면단은 많이 바뀌니까 따라가야한다(옛것을 고집x)
+- db는 표준을 따르기 때문에 옛것을 고집해도됨.
+- db에관련한것은 항상공부해야함. 쿼리만드는데 비중을 높이자.
+- process모델링과 data모델링은 같이 만들다가 어느시점에
+두개를 맞춘다 그러니 data모델링관계를 잘이해해야한다.
+
+map에서 꺼내써도 map에서 사라지는것이 아님
+minheight 그리드내에서 새로고침해도 그리드를 감싸고 있는 박스가 줄었다 다시생기기 떄문에 스크롤바가 다시위로올라감
+
+파일다운로드했을때 a태그 감싸고 해줘야함 input태그자체에 클릭이벤트를 넣을수 없음
+
+
+415 타입문제 contentType requestBody
+404 경로문제
+500 거의 내부코드 오타나 잘못된문법 / 서버응답문제
+400 파라미터 오타나 갯수 확인
+
+
+- 문자열을 날짜로변환할수 없습니다. => input text 는 string인데 이걸 날짜다입으로 맞춰줘야한다
+- 물자열이나 이진데이터는 잘립니다. => 테이터타입 길이문제 + 공백 + mapper의 인자값순서랑 proc의 변수순서 맞춰야함
+
+

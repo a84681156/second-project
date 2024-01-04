@@ -1,0 +1,361 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    color: #222;
+}
+
+ul, li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #222;
+}
+
+img{
+    vertical-align: top;
+    border: 0;
+}
+/* ==================================================== */
+#container{
+    /* background-color: antiquewhite; */
+    position: relative;
+    margin-top: 20px;
+}
+
+#container #managmentBox{
+    /* background-color: aqua; */
+    width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #222;
+}
+
+
+
+/* 사용자정보 검색 */
+
+#managmentBox .scBar{
+    /* background-color: aquamarine; */
+    margin-bottom: 10px;
+}
+
+.scBar ul{
+    /* background-color: rgb(214, 180, 248); */
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+}
+
+.scBar ul li{
+    /* background-color: blueviolet; */
+    width: 70px;
+    height: 30px;
+}
+
+.scBar ul .scList1,.scList3{
+    background-color: #eee;
+    border: 1px solid #222;
+}
+
+.scBar ul li span{
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-left: 8px;
+}
+
+.scBar ul .scList2 select{
+    text-align: center;
+    text-align-last: center;
+    width: 70px;
+    height: 30px;
+    background: url('https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png') calc(100% - 5px) center no-repeat;
+    background-size: 20px;
+    border: 1px solid #888;
+    outline: 0 none;
+}
+
+.scBar ul .scList2 select:hover{
+    border: 1px solid #222;
+}
+
+.scBar ul .scList2 select:focus{
+    border-color: 222;
+    outline: 0;
+    border-width: 1px;
+  }
+  
+.scBar ul .scList2 select option{
+    background: #222;
+    color: #fff;
+    padding: 3px 0;
+}
+
+.scBar ul .scList3 span{
+    margin-left: 17px;
+}
+
+.scBar ul .scList4 select{
+    text-align: center;
+    text-align-last: center;
+    width: 70px;
+    height: 30px;
+    background: url('https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png') calc(100% - 5px) center no-repeat;
+    background-size: 20px;
+    border: 1px solid #888;
+    outline: 0 none;
+}
+
+.scBar ul .scList4 select:hover{
+    border: 1px solid #222;
+}
+
+.scBar ul .scList4 select:focus{
+    border-color: #222;
+    outline: 0;
+    border-width: 1px;
+  }
+  
+.scBar ul .scList4 select option{
+    background: #222;
+    color: #fff;
+    padding: 3px 0;
+}
+
+.scBar ul .scList5{
+    width: 220px;
+    height: 30px;
+    font-size: 15px;
+    padding-left: 5px;
+    border : 1px solid #222;
+}
+
+.scBar ul .scList5 label{
+    /* background-color: rgb(178, 122, 234); */
+    display: inline-block;
+    width: 45px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.scBar ul li .btnControl{
+    background-color: #474757;
+    border: none;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.scBar ul li .btnControl:hover{
+    background-color: #2d2d38;
+    cursor:pointer;
+}
+
+
+
+/* 사용자정보 */
+
+#managmentBox .userInfo{
+    /* background-color: rgb(251, 190, 149); */
+    margin-bottom: 10px;
+    width: 980px;
+    height: 400px;
+}
+
+.userInfo table{
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border : 1px solid #222;
+    border-collapse : collapse;
+    table-layout: fixed;
+}
+
+.userInfo table th{
+    background-color: #eee;
+    padding: 5px;
+}
+
+.userInfo table td{
+    background-color: #fff;
+    padding-left: 5px;
+    white-space:nowrap;
+    text-overflow:ellipsis; 
+    overflow:hidden;
+}
+
+.userInfo table td label{
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.userInfo table .empNo{
+    position: relative;
+}
+
+.userInfo table td .formControl{
+	width: 220px;
+	text-align: center;
+	outline: none;
+	border: none;
+}
+
+.userInfo table td .formControl2{
+	width: 100px;
+	text-align: center;
+	border: none;
+}
+
+.userInfo table td .btnControl{
+    background-color: #fff;
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    border: none;
+    width: 20px;
+    height: 20px;
+    color: red;
+    font-size: 15px;
+    cursor:pointer;
+}
+
+.userInfo table td select{
+	background-color: #fff;
+    text-align: center;
+    text-align-last: center;
+    width: 170px;
+    height: 30px;
+    /* background: url('https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png') calc(100% - 5px) center no-repeat; */
+    background-size: 20px;
+    border: 1px solid #aaa;
+    outline: none;
+
+}
+
+.userInfo table td select:hover{
+    border: 1px solid #222;
+}
+
+.userInfo table td select:focus{
+    border-color: #222;
+    outline: 0;
+    border-width: 1px;
+  }
+  
+.userInfo table td select option{
+    background: #222;
+    color: #fff;
+    padding: 3px 0;
+}
+
+
+
+/* 사용자정보관리 버튼 */
+
+.manageBtn{
+    /* background-color: rgb(246, 246, 159); */
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 900px;
+}
+
+.manageBtn .btnControl2{
+    background-color: #474757;
+    border: none;
+    width: 80px;
+    height: 30px;
+    color: #fff;
+    font-size: 13px;
+}
+
+.manageBtn .btnControl2:hover{
+    background-color: #2d2d38;
+    cursor:pointer;
+}
+
+
+
+/* 비밀번호 변경클릭시 변경창 */
+#container .modifyPwd{
+    /* background-color: rgb(204, 171, 237); */
+    position: absolute;
+    left: 600px;
+    top: 80px;
+}
+
+.modifyPwd .modifyPwdBox{
+    background-color: #ddd;
+    width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #222;
+}
+
+.modifyPwdBox table{
+    width: 100%;
+    border : 1px solid #222;
+    border-collapse : collapse;
+    margin-bottom: 10px;
+}
+
+.modifyPwdBox table th{
+    background-color: #eee;
+}
+
+.modifyPwdBox table td .formControl{
+    padding: 0px 0px 0px 10px;
+    width: 274px;
+    height: 30px;
+    border: 1px solid #ccc;
+}
+
+.modifyPwdBox table td .formControl:hover{
+    border: 1px solid #2d2d38;
+}
+
+.modifyPwdBox table td .formControl:focus{
+    border-color: #2d2d38;
+    outline: 0;
+    border-width: 0px;
+}
+
+.modifyPwdBox table td{
+    background-color: #fff;
+    height: 30px;
+}
+
+.modifyPwdBox .popBtn{
+    /* background-color: rgb(219, 189, 249); */
+    display: flex;
+    justify-content: space-between;
+    width: 85px;
+    margin-left: 293px;
+}
+
+.modifyPwdBox .popBtn .btnControl{
+    background-color: #474757;
+    border: none;
+    width: 40px;
+    height: 30px;
+    color: #fff;
+    font-size: 13px;
+}
+
+.modifyPwdBox .btnControl:hover{
+    background-color: #2d2d38;
+    cursor:pointer;
+}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.md.sys.dao.BoardDao">    
+    <!-- 공지사항-작성하기 -->
+	<insert id="write" parameterType="BoardDto">
+		EXEC proc_tsp06410_wrt #{bsnm_no}, #{erl_dy}, #{wrt_sabun}, #{title}, #{cont}, #{atc_file}, #{atc_file_ps}, #{frt_input_empl_no}, #{lst_input_empl_no}, #{name}
+	</insert>
+	
+	<!-- 공지사항-글읽기 -->
+	<select id="read" parameterType="Integer" resultType="BoardDto">
+		EXEC proc_tsp06410_read #{seq_no}
+	</select>
+	
+	<!-- 공지사항-수정하기 -->
+	<update id="modify" parameterType="BoardDto">
+		EXEC proc_tsp06410_mod #{seq_no}, #{title}, #{cont}, #{atc_file}, #{atc_file_ps}, #{name}
+	</update>
+	
+	<!-- 공지사항-삭제하기 -->
+	<delete id="delete" parameterType="Integer">
+		EXEC proc_tsp06410_del #{seq_no}
+	</delete>
+	
+ 	<!-- 공지사항 검색 -->
+	<select id="searchBoardList" parameterType="SearchCondition" resultType="BoardDto">
+		SELECT ROW_NUMBER() OVER(ORDER BY seq_no DESC) AS ROWNUM, A.*
+		FROM (SELECT 
+				TOP 100 PERCENT
+				bsnm_no ,
+				erl_dy ,
+				seq_no ,
+				wrt_sabun ,
+				title ,
+				cont ,
+				CASE WHEN atc_file IS NULL THEN '없음'
+				WHEN atc_file = '' THEN '없음'
+				ELSE '있음'
+				END AS atc_file ,
+				atc_file_ps ,
+				CONVERT (datetime, FORMAT(frt_input_dy,'%y-%M-%d %H:%m:%s')) AS frt_input_dy,
+				frt_input_empl_no ,
+				CONVERT (datetime, FORMAT(lst_input_dy,'%y-%M-%d %H:%m:%s')) AS lst_input_dy,
+				lst_input_empl_no,
+				name
+				FROM tsp06410
+				WHERE 1=1 <include refid="searchCondition"/>
+				ORDER BY seq_no DESC) A
+				
+	</select>
+	
+	<!-- 검색 컨디션모드 sql -->
+	<sql id = "searchCondition">
+		<if test="keyword !=null and keyword != ''">
+			<choose>
+				<when test='option == "t"'>
+					AND title LIKE '%'+ #{keyword} + '%'
+				</when>
+				<when test='option == "c"'>
+					AND cont LIKE '%' + #{keyword} + '%'
+				</when>
+				<otherwise>
+					AND name LIKE '%' + #{keyword} + '%'
+				</otherwise>
+			</choose>
+		</if>
+	</sql>
+	
+	<!-- 번호 가져오기 -->
+	<select id="nextSeqNo" resultType="int">
+		EXEC proc_tsp06410_seqNo
+	</select>
+	
+</mapper>
+ 	

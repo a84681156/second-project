@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    color: #222;
+}
+
+ul, li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #222;
+}
+
+img{
+    vertical-align: top;
+    border: 0;
+}
+/* ==================================================== */
+#container {
+    /* background-color: antiquewhite; */
+    margin-top: 50px;
+}
+
+#container #loginBox{
+    /* background-color: aqua; */
+    width: 500px;
+    height: 450px;
+    margin: 0 auto;
+    border: #222 2px solid;
+    border-radius: 10px;
+}
+
+#loginBox table{
+    width: 400px;
+    height: 350px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+#loginBox table th,td{
+    padding: 3px;
+}
+
+#loginBox table th span{
+    font-size: 30px;
+
+}
+
+#loginBox table th p{
+    font-size: 18px;
+
+}
+
+#loginBox table td .formControl{
+    padding: 0px 0px 0px 10px;
+    width: 320px;
+    height: 40px;
+    border: 1px solid #888;
+}
+
+#loginBox table td .formControl:hover{
+    border: 1px solid #222;
+}
+
+#loginBox table td .formControl:focus{
+    border-color: #222;
+    outline: 0;
+    border-width: 1px;
+}
+
+#loginBox table td .chkControl{
+    display: none;
+}
+
+#loginBox table td .chkControl{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+}
+
+#loginBox table td .rememId{
+    /* background-color: beige; */
+    font-size: 17px;
+}
+
+#loginBox table td .btnControl{
+    background-color: #555;
+    border-radius: 5px;
+    border: none;
+    width: 400px;
+    height: 40px;
+    color: #fff;
+    font-size: 15px;
+    
+}
+
+#loginBox table td .btnControl:hover{
+    background-color: #444;
+    cursor:pointer;
+}

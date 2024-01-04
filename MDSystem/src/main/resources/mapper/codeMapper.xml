@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.md.sys.dao.CodeDao">    
+    <!-- 코드검색 검색 및 그룹코드리스트 -->
+	<select id="searchCodeList" parameterType="SearchCondition" resultType="CodeDto">
+		EXEC proc_tsp06310_listSC #{keyword}
+	</select>
+    
+    <!-- 코드관리-그룹코드 추가하기 -->
+    <insert id="gcWrt" parameterType="map">
+    	EXEC proc_tsp06310_wrt #{bsnm_no}, #{grp_code}, #{grp_code_nm}, #{use_yn}, #{frst_input_ip}, #{lst_update_ip}, #{sabun}
+    </insert>
+    
+    <!-- 코드관리-그룹코드 수정화면이동 -->
+    <select id="gcRead" parameterType="CodeDto" resultType="CodeDto">
+    	EXEC proc_tsp06310_read #{grp_code}
+    </select>
+    
+    <!-- 코드관리-그룹코드 수정하기 -->
+    <update id="gcMod" parameterType="map">
+    	EXEC proc_tsp06310_mod #{grp_code}, #{grp_code_nm}, #{use_yn}, #{lst_update_ip}, #{sabun}, #{indx}
+    </update>
+    
+    <!-- 코드관리-그룹코드 삭제하기 -->
+    <delete id="gcDel" parameterType="CodeDto">
+    	EXEC proc_tsp06310_del #{grp_code}
+    </delete>
+    
+    <!-- 코드관리-코드리스트 -->
+	<select id="cList" parameterType="CodeDto" resultType="CodeDto">
+		EXEC proc_tsp06311_list #{grp_code} 
+	</select>
+	
+	<!-- 코드관리-코드추가 -->
+	<insert id="cAdd" parameterType="map">
+		EXEC proc_tsp06311_wrt #{bsnm_no}, #{grp_code}, #{code}, #{code_nm}, #{use_yn}, #{frst_input_ip}, #{lst_update_ip}, #{sabun}
+	</insert>
+	
+	<!-- 코드관리-코드수정화면이동 -->
+	<select id="cRead" parameterType="CodeDto" resultType="CodeDto">
+		EXEC proc_tsp06311_read #{code}
+	</select>
+	
+	<!-- 코드관리-코드수정 -->
+	<update id="cMod" parameterType="map">
+		EXEC proc_tsp06311_mod #{grp_code}, #{code}, #{code_nm}, #{indx}, #{use_yn}, #{lst_update_ip}, #{sabun}
+	</update>
+	
+	<!-- 코드관리-코드삭제 -->
+	<delete id="cDel" parameterType="CodeDto">
+		EXEC proc_tsp06311_del #{code}
+	</delete>
+	
+	<!-- 코드관리-코드불러오기 -->
+	<select id="CommonCodeSC" parameterType="map" resultType="map">
+		EXEC proc_tsp06311_commonCodeSC #{grp_code}
+	</select>
+	
+
+	
+</mapper>
+ 	

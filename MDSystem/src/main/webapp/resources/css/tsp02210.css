@@ -1,0 +1,467 @@
+@charset "UTF-8";
+
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    color: #222;
+}
+
+ul, li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #222;
+}
+
+img{
+    vertical-align: top;
+    border: 0;
+}
+/* ==================================================== */
+
+/* 제목 및 네비게시션버튼 */
+
+.contents_wrap_tsp02210_page{
+	/* background-color: gray; */
+}
+
+.contents_wrap_tsp02210_page .page-title-wrap{
+	/* background-color: aqua; */
+	width: 1000px;
+    margin: 0 auto;
+    /* border: 1px solid #222; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.page-title-wrap h2{
+	/* background-color: green; */
+	width: 130px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	margin-bottom: 10px;
+}
+
+.page-title-wrap ul{
+	/* background-color: red; */
+	display: flex;
+	border-bottom: 1px solid #aaa;
+}
+
+.page-title-wrap ul li{
+	/* background: blue; */
+	width: 180px;
+	height:40px;
+	border: 1px solid #aaa;
+	text-align: center;
+	line-height: 40px;
+	font-size: 17px;
+}
+
+.page-title-wrap ul li:hover{
+	border: 1px solid #000;
+}
+
+
+/* 검색박스 */
+
+.contents_wrap_tsp02210_page .search_wrap_active{
+	background-color: #eee;
+	width: 1000px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.search_wrap_active .sch_box{
+	/* background-color: gray; */
+	height: 50px;
+}
+
+.sch_box ul{
+	/* background-color: black; */
+	display: flex;
+}
+
+.sch_box ul li{
+	/* background-color: blue; */
+	line-height: 50px;
+    margin-right: 20px;
+}
+
+.sch_box ul li .txtControl{
+	width:50px;
+	text-align: center;
+	font-size: 16px;
+}
+
+.sch_box ul .sc1 select{
+	background-color: #fff;
+    text-align: center;
+    text-align-last: center;
+    width: 100px;
+    height: 30px;
+    /* background: url('https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png') calc(100% - 5px) center no-repeat; */
+    background-size: 20px;
+    border: 1px solid #aaa;
+    outline: none;
+
+}
+
+.sch_box ul .sc1 select:hover{
+    border: 1px solid #222;
+}
+
+.sch_box ul .sc1 select:focus{
+    border-color: #222;
+    outline: 0;
+    border-width: 1px;
+  }
+  
+.sch_box ul .sc1 select option{
+    background: #222;
+    color: #fff;
+    padding: 3px 0;
+}
+
+.sch_box ul .sc2 .formControl{
+    padding: 0px 0px 0px 10px;
+    width: 120px;
+    height: 30px;
+    border: 1px solid #aaa;
+}
+
+.sch_box ul .sc2 .formControl:hover{
+    border: 1px solid #222;
+}
+
+.sch_box ul .sc2 .formControl:focus{
+    border-color: #222;
+    outline: 0;
+    border-width: 1px;
+}
+
+.sch_box ul .sc4 .btnControl{
+    background-color: rgb(255, 70, 70);
+    border: none;
+    width: 80px;
+    height: 32px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-left: 168px;
+    
+}
+
+.sch_box ul .sc4 .btnControl:hover{
+    background-color: red;
+    cursor:pointer;
+}
+
+/* 테이블 섹션 */
+
+.tsp02210_container{
+	/* background-color: aqua; */
+	width: 100%;
+    margin: 0 auto;
+    /* border: 1px solid #222; */
+	padding-top: 10px;
+	padding-bottom: 10px;
+	display: flex;
+}
+
+.tsp02210_container .tsp02210_list{
+	/* background-color: red; */
+	width: 1000px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-right: 10px;
+	min-height: 370px;
+	margin: 0 auto;
+}
+
+ .tsp02210_list .title_wrap{
+ 	/* background-color: aqua; */
+ 	display: flex;
+ 	justify-content: space-between;
+ 	margin-bottom: 10px;
+ }
+
+.title_wrap .title_zone h2{
+	/* background-color: green; */
+	width: 130px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+}
+
+.title_wrap .btn_right_box{
+	/* background-color: blue; */
+}
+
+.title_wrap .btn_right_box .btnControl{
+    background-color: #474757;
+    border: none;
+    width: 80px;
+    height: 30px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.title_wrap .btn_right_box .btnControl:hover{
+    background-color: #2d2d38;
+    cursor:pointer;
+}
+
+.tsp02210_container .tsp05100_read{
+	/* background-color: blue; */
+	width: 405px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+#listT{
+	width:100%;
+	font-size: 11px;
+}
+
+.tabulator-tableholder::-webkit-scrollbar {
+    width: 13px;
+}
+.tabulator-tableholder::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+.tabulator-tableholder::-webkit-scrollbar-track {
+    background-color: #eee;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}
+
+
+.tabulator .tabulator-col-group-cols .tabulator-col[tabulator-field="func"]{
+	background-color: #A5FFE4;
+}
+
+.tabulator .tabulator-col-group-cols .tabulator-col[tabulator-field="imprtn"]{
+	background-color: 	#FFE4B5;
+}
+
+.tabulator .tabulator-col-group-cols .tabulator-col[tabulator-field="risk"]{
+	background-color: 	#FFDFDC	;
+}
+
+
+/* 모달창 */
+.tsp02210_modal .title_zone .btnControl:hover{
+    background-color: #2d2d38;
+    cursor:pointer;
+}
+
+/* 모달 테이블섹션 */
+
+
+
+.tsp02210_modal .tsp02210_modal_box{
+	background-color: #fff;
+	width: 100%;
+}
+
+.tsp02210_modal_box .table_wrap{
+	/* background-color: blue; */
+	padding-top: 10px;
+}
+
+.table_wrap .table{
+	/* background-color: red; */
+	width: 100%;
+    border-collapse : collapse;
+    border-top: 2px solid #222;
+}
+
+.table tr th{
+	background-color: #eee;
+}
+
+.table tr th i{
+	color: red;
+}
+
+.table tr td{
+	padding: 5px;
+	border: 1px solid #eee;
+}
+
+.table tr td .formControl{
+    padding: 0px 10px 0px 10px;
+    width: 350px;
+    height: 28px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 28px;
+}
+
+.table tr td .formControl:hover{
+    border: 1px solid #222;
+}
+
+.table tr td .formControl:focus{
+    border-color: #222;
+    outline: 0;
+    border-width: 1px;
+}
+  
+.table tr td select option{
+    background: #222;
+    color: #fff;
+    padding: 3px 0;
+}
+
+.table tr td .formControl2{
+    padding: 0px 10px 0px 10px;
+    width: 818px;
+    height: 28px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 28px;
+}
+
+.table tr td .formControl2:hover{
+    border: 1px solid #222;
+}
+
+.table tr td .formControl2:focus{
+    border-color: #222;
+    outline: 0;
+    border-width: 1px;
+}
+
+.table tr td .formControl3{
+    padding: 0px 10px 0px 10px;
+    width: 300px;
+    height: 28px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 28px;
+}
+
+.table tr td .formControl3:hover{
+    border: 1px solid #222;
+}
+
+.table tr td .formControl3:focus{
+    border-color: #222;
+    outline: 0;
+    border-width: 1px;
+}
+
+.table tr td .formControl4{
+    padding: 0px 10px 0px 10px;
+    width: 770px;
+    height: 28px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 28px;
+}
+
+.table tr td .formControl4:hover{
+    border: 1px solid #222;
+}
+
+.table tr td .formControl4:focus{
+    border-color: #222;
+    outline: 0;
+    border-width: 1px;
+}
+
+.table tr td .formControl5{
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+
+.table tr td .btnControl2{
+	display: inline-block;
+    background-color: #474757;
+    border: none;
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.table tr td .btnControl2:hover{
+    background-color: #2d2d38;
+    cursor:pointer;
+}
+
+.table tr td .btnControl3{
+	display: inline-block;
+    background-color: #474757;
+    border: none;
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-left: 5px;
+    display: none;
+}
+
+.table tr td .btnControl3:hover{
+    background-color: #2d2d38;
+    cursor:pointer;
+}
+
+.table tr td .btnControl4{
+	display: inline-block;
+    background-color: #474757;
+    border: none;
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-left: 5px;
+  	display: none;
+}
+
+.table tr td .btnControl4:hover{
+    background-color: #2d2d38;
+    cursor:pointer;
+}

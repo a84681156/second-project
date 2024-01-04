@@ -1,0 +1,285 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    color: #222;
+}
+
+ul, li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #222;
+}
+
+img{
+    vertical-align: top;
+    border: 0;
+}
+/* ==================================================== */
+#container{
+    /* background-color: aliceblue; */
+    margin-top: 10px;
+    position: relative;
+}
+
+#container #userRegiStateBox{
+    /* background-color: antiquewhite; */
+    width: 1000px;
+    margin: 0 auto;
+    /* border: 1px solid #222; */
+    padding: 10px;
+}
+
+
+
+/* 사용자등록현황 검색 */
+
+#userRegiStateBox .scBar{
+    /* background-color: aqua; */
+    margin-bottom: 10px;
+}
+
+.scBar ul{
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: space-between;
+    width: 850px;
+}
+
+.scBar ul li{
+    /* background-color: beige; */
+}
+
+.scBar ul li span{
+    display: inline-block;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-left: 13px;
+}
+
+.scBar ul .scList1{
+    background-color: #eee;
+    width: 70px;
+    height: 30px;
+    border: 1px solid #222;
+}
+
+.scBar ul .scList2 .formControl{
+    padding: 0px 0px 0px 10px;
+    width: 200px;
+    height: 30px;
+    border: 1px solid #888;
+}
+
+.scBar ul .scList2 .formControl:hover{
+    border: 1px solid #222;
+}
+
+.scBar ul .scList2 .formControl:focus{
+    border-color: #222;
+    outline: 0;
+    border-width: 1px;
+}
+
+.scBar ul .scList3{
+    width: 220px;
+    height: 30px;
+    font-size: 15px;
+    padding-left: 5px;
+    border : 1px solid #222;
+}
+
+.scBar ul .scList3 label{
+    /* background-color: rgb(178, 122, 234); */
+    display: inline-block;
+    width: 45px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.scBar ul .scList4{
+    background-color: #eee;
+    width: 70px;
+    height: 30px;
+    border: 1px solid #222;
+    padding-left: 7px;
+}
+
+.scBar ul .scList5{
+    position: relative;
+}
+
+.scBar ul .scList5 .formControl{
+    padding: 0px 0px 0px 10px;
+    width: 200px;
+    height: 30px;
+    border: 1px solid #888;
+}
+
+.scBar ul .scList5 .formControl:hover{
+    border: 1px solid #222;
+}
+
+.scBar ul .scList5 .formControl:focus{
+    border-color: #222;
+    outline: 0;
+    border-width: 1px;
+}
+
+.scBar ul .scList5 .btnControl{
+    background-color: #fff;
+    position: absolute;
+    top: 5px;
+    right: 3px;
+    border: none;
+    width: 20px;
+    height: 20px;
+    color: red;
+    font-size: 15px;
+    cursor:pointer;
+}
+
+.scBar ul .scList6 .btnControl{
+    background-color: #474757;
+    border: none;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.scBar ul .scList6 .btnControl:hover{
+    background-color: #2d2d38;
+    cursor:pointer;
+}
+
+
+/* 사용자 이름검색 모달창 */
+
+#scNameBox .formControl{
+    padding: 0px 0px 0px 10px;
+    width: 380px;
+    height: 30px;
+    border: 1px solid #888;
+    margin: 0 auto;
+}
+
+#scNameBox .formControl:hover{
+    border: 1px solid #222;
+}
+
+#scNameBox .formControl:focus{
+    border-color: #222;
+    outline: 0;
+    border-width: 1px;
+}
+#scNameBox .btnControl{
+    background-color: #474757;
+    border: none;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#scNameBox #nameListTable{
+	width: 380px;
+	height: 250px;
+    overflow: auto;
+}
+
+#scNameBox #nameList{
+	background-color: #ddd;
+	width: 100%;
+	height: 100%;
+  	opacity: 0.5;
+    border-collapse: collapse;
+}
+
+
+/* 사용자등록현황리스트 */
+#userRegiStateBox .userRegiListBox{
+    /* background-color: rgb(210, 245, 177); */
+    width: 980px; 
+    height: 500px; 
+    border : 2px solid #222;
+    padding: 30px 10px 30px 10px;
+}
+
+.userRegiListBox .userRegiListTable{
+    /* background-color: rgb(211, 177, 245); */
+    width: 100%; 
+    height: 100%; 
+    border : 2px solid #222;
+    margin-bottom: 10px;
+    overflow: auto;
+    display: block;
+}
+
+.userRegiListTable table{
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #222;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.userRegiListTable table th{
+    background-color: #eee;
+    position: sticky;
+    top: 0;
+    padding: 5px;
+}
+
+.userRegiListTable table td{
+    height: 40px;
+    text-align: center;
+    background-color: #fff;
+    padding-left: 5px;
+    white-space:nowrap;
+    text-overflow:ellipsis; 
+    overflow:hidden;
+}
+
+#nameListTable::-webkit-scrollbar {
+    width: 13px;
+}
+#nameListTable::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+#nameListTable::-webkit-scrollbar-track {
+    background-color: #eee;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}
+
+.userRegiListTable::-webkit-scrollbar {
+    width: 13px;
+}
+.userRegiListTable::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+.userRegiListTable::-webkit-scrollbar-track {
+    background-color: #eee;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}

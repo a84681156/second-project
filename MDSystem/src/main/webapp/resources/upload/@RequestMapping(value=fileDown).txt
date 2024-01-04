@@ -1,0 +1,27 @@
+@RequestMapping(value="/fileDown")
+   public void fileDown(@RequestParam("file") String file, HttpServletResponse response) {
+      System.out.println(file);
+      try {
+         String uploadPath = "C:\\workspace\\kyh\\src\\main\\webapp\\resources\\upload\\"+file;
+         File downloadFile = new File(uploadPath);
+         
+         response.setContentType("application/octet-stream");
+         
+         //다운로드 파일명 지정
+         response.setHeader("Content-Disposition", "attachment;filename=" + file);
+           response.setHeader("Content-Transfer-Encoding", "binary");
+           
+           FileInputStream fileInputStream = new FileInputStream(uploadPath);
+           OutputStream out = response.getOutputStream();
+           
+           int read = 0;
+           byte[] buffer = new byte[1024];
+           while ((read = fileInputStream.read(buffer)) != -1) { // 1024바이트씩 계속 읽으면서 outputStream에 저장, -1이 나오면 더이상 읽을 파일이 없음
+               out.write(buffer, 0, read);
+           }
+        
+      } catch(Exception e) {
+         e.printStackTrace();
+      }
+      
+   }

@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    color: #222;
+}
+
+ul, li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #222;
+}
+
+img{
+    vertical-align: top;
+    border: 0;
+}
+/* ==================================================== */
+header .headerIn{
+    /* background-color: rgb(193, 226, 255); */
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid #222;
+}
+
+.headerIn .headerUp{
+	/* background-color: red; */
+	width: 1000px;
+	margin: 0 auto;
+	display: flex;
+}
+
+.headerUp .logo{
+    /* background-color: bisque; */
+    width: 300px;
+    height: 100px;
+    margin-left: 350px;
+}
+
+.headerUp .info{
+	/* background-color: blue; */
+	width: 250px;
+	height: 20px;
+	margin-top: 15px;
+	margin-left: 200px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.headerUp .my:hover{
+	border-bottom: 1px solid #222; 
+}
+
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+
+footer .footerIn{
+    /* background-color: rgb(193, 226, 255); */
+    width: 100%;
+    height: 50px;
+    margin-top: 50px;
+    border-top: 2px solid #222;
+}
+
+.footerIn .copyright{
+    /* background-color: bisque; */
+    width: 400px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.popup-bg {background-color: rgba(0, 0, 0, 0.0); width:100%; height:100%; display:none; position: absolute !important; top: 50% !important; left: 50% !important; transform: translate(-50%, -50%); z-index:666;}
+.popup-bg.active {display:block;}
+.popup-bg.active .popup-wrap {display:block;}
+.popup-wrap {display:none; position: absolute !important; top: 50% !important; left: 50% !important; transform: translate(-50%, -50%); background-color:#fff; padding: 40px 50px; border:1px solid #f5f5f5; box-shadow: 1px 4px 11px 3px rgb(0 0 0 / 10%); border-radius:10px; z-index:666;}
+.popup-wrap .popup-cont {font-size:18px; text-align:center; text-align:center;}
+.popup-wrap .popup-cont:before {content:""; display:block; background:url(../img/sub/ico-check-b.png) no-repeat; width:55px; height:55px; margin:0 auto; margin-bottom:20px;}
+.popup-wrap .popup-btn {display:flex; justify-content:center; margin-top: 30px;}
+.popup-wrap .popup-btn a {display:block; padding:8px 25px; background-color:#de012b; color:#fff; margin:0 5px; border-radius: 4px;}
+.popup-wrap .popup-btn a.btn-close {background:none;}
